@@ -12,9 +12,7 @@ public class ZombieTacon : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        GetComponent<NavMeshAgent>().SetDestination(objetivo.transform.position);
         animator = GetComponent<Animator>();
-        animator.SetBool("isMoving", true);
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -26,13 +24,19 @@ public class ZombieTacon : MonoBehaviour
         }
     }
 
+    public void Iniciar()
+    {
+        GetComponent<NavMeshAgent>().SetDestination(objetivo.transform.position);
+        animator.SetBool("isMoving", true);
+    }
+
     public void Dañar()
     {
-        if(objetivo) objetivo.GetComponent<Objetivo>().RecibirDaño(40);
+        if(objetivo) objetivo.GetComponent<Objetivo>().RecibirDaño(5);
         //objetivo?.GetComponent<Objetivo>().RecibirDaño(40);
     }
 
-    public void RecibirDaño(int daño = 5)
+    public void RecibirDaño(int daño = 20)
     {
         vida -= daño;
     }
