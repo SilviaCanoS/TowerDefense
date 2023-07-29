@@ -2,48 +2,22 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.Events;
 
-public class Demonio : MonoBehaviour
+public class Demonio : Enemigo
 {
-    public GameObject objetivo;
-    public int vida = 200;
-    public Animator animator;
-    public ZombieTacon zombie;
+    public UnityEvent activarZombie;
 
-    // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
-        
-    }
-
-    private void OnCollisionEnter(Collision collision)
-    {
-        if(collision.gameObject.CompareTag("Objetivo"))
-        {
-            animator.SetBool("isMoving", false);
-            animator.SetTrigger("onObjectiveReached");
-        }
-    }
-
-    private void Update()
-    {
+        vida = 200;
+        dañar = 40;
+        daño = 10;
     }
 
     public void TerminaOrden()
     {
-        zombie.Iniciar();
-        GetComponent<NavMeshAgent>().SetDestination(objetivo.transform.position);
-        animator = GetComponent<Animator>();
-        animator.SetBool("isMoving", true);
-    }
-
-    public void Dañar()
-    {
-        if(objetivo) objetivo.GetComponent<Objetivo>().RecibirDaño(40);
-    }
-
-    public void RecibirDaño(int daño = 5)
-    {
-        vida -= daño;
+        activarZombie.Invoke();
+        DefinirObjetivo();
     }
 }
