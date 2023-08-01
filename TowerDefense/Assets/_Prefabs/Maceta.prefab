@@ -1937,7 +1937,7 @@ GameObject:
   - component: {fileID: 4423995237203909016}
   m_Layer: 0
   m_Name: Maceta
-  m_TagString: Untagged
+  m_TagString: Maceta
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
