@@ -43,7 +43,7 @@ public class AdminToques : MonoBehaviour
             Debug.Log(hit.transform.gameObject.name);
             if (hit.transform.gameObject.CompareTag("Maceta"))
             {
-                Debug.Log("Maceta toacad");
+                Debug.Log("Maceta tocada");
                 if (enMacetaTocada != null) enMacetaTocada(hit.transform.gameObject);
             }
         }
