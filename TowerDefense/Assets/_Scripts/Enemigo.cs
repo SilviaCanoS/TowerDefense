@@ -10,9 +10,10 @@ public class Enemigo : MonoBehaviour
     public int vida = 200, dañar = 0, daño = 0;
     public Animator animator;
 
-    private void OnCollisionEnter(Collision collision)
+
+    private void OnTriggerEnter(Collider other)
     {
-        if (collision.gameObject.CompareTag("Objetivo"))
+        if (other.gameObject.CompareTag("Objetivo"))
         {
             animator.SetBool("isMoving", false);
             animator.SetTrigger("onObjectiveReached");
