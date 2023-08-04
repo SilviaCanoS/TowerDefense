@@ -27,7 +27,10 @@ public class AminTorres : MonoBehaviour
             Debug.Log("Creando Torre");
             int indiceTorre = (int)torreSeleccionada;
             Vector3 posParaInstanciar = maceta.transform.position; //new(-18.17f, 8.14f, -14.01f)
-            posParaInstanciar += new Vector3(-3.29231f, 4.44f, -10.224f);
+
+            if ((int)torreSeleccionada == 2) posParaInstanciar += new Vector3(-0.09769f, 3.47f, 0.114f);
+            else posParaInstanciar += new Vector3(-3.29231f, 4.44f, -10.224f);
+            
             GameObject torreInstanciada =
                 Instantiate(prefabTorres[indiceTorre], posParaInstanciar, Quaternion.identity);
             torreInstanciada.transform.SetParent(maceta.transform);
