@@ -1,10 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class EnemySpawner : MonoBehaviour
 {
-    public List<GameObject> prefabEnemigos;
+    //public List<GameObject> prefabEnemigos;
+    public GameObject prefabZombiePequeño, prefabZombieGrande;
     public int oleada;
     public List<int> enemigosPorOleada;
     private int enemigosDuranteEstaOleada;
@@ -15,6 +17,7 @@ public class EnemySpawner : MonoBehaviour
     void Start()
     {
         oleada = 0;
+        Instantiate(prefabZombieGrande);
         ConfigurarCantidadDeEnemigos();
         InstanciarEnemigo();
     }
@@ -31,8 +34,9 @@ public class EnemySpawner : MonoBehaviour
 
     public void InstanciarEnemigo()
     {
-        int indiceAleatorio = Random.Range(0, prefabEnemigos.Count);
-        Instantiate<GameObject>(prefabEnemigos[indiceAleatorio], transform.position, Quaternion.identity);
+        //int indiceAleatorio = Random.Range(0, prefabEnemigos.Count);
+        //Instantiate<GameObject>(prefabEnemigos[indiceAleatorio], transform.position, Quaternion.identity);
+        Instantiate(prefabZombiePequeño, transform.position, Quaternion.identity);
         enemigosDuranteEstaOleada--;
         if(enemigosDuranteEstaOleada < 0)
         {
