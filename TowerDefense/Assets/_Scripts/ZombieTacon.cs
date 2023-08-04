@@ -10,10 +10,11 @@ public class ZombieTacon : Enemigo
         vida = 100;
         dañar = 5;
         daño = 20;
-    }
-
-    public void Iniciar()
-    {
         DefinirObjetivo();
     }
+
+    //public void Iniciar()
+    //{
+    //    DefinirObjetivo();
+    //}
 }

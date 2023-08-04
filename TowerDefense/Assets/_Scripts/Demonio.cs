@@ -6,7 +6,7 @@ using UnityEngine.Events;
 
 public class Demonio : Enemigo
 {
-    public UnityEvent activarZombie;
+    //public UnityEvent activarZombie;
 
     private void Start()
     {
@@ -17,7 +17,7 @@ public class Demonio : Enemigo
 
     public void TerminaOrden()
     {
-        activarZombie.Invoke();
+        //activarZombie.Invoke();
         DefinirObjetivo();
     }
 }
