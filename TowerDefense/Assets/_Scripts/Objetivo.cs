@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Objetivo : MonoBehaviour
+public class Objetivo : MonoBehaviour, IAtacable
 {
     public int vida = 100;
     public delegate void ObjetivoDestruido();
@@ -14,7 +14,7 @@ public class Objetivo : MonoBehaviour
         if (vida <= 0)
         {
             if (EnObjetivoDestruido != null) EnObjetivoDestruido();
-            Destroy(this.gameObject); //Destroy(this.gameObject, 0.2f);
+            Destroy(this.gameObject, 0.2f);
         }
     }
 

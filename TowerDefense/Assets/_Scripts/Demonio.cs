@@ -6,17 +6,15 @@ using UnityEngine.Events;
 
 public class Demonio : Enemigo
 {
-    //public UnityEvent activarZombie;
-    public EnemySpawner enemySpawner;
     float timer = 0, timerEfecto = 40;
 
     private void Start()
     {
         vida = 200;
-        dañar = 40;
+        _dañar = 40;
         daño = 10;
     }
-
+    
     private void Update()
     {
         timer += Time.deltaTime;
@@ -25,11 +23,5 @@ public class Demonio : Enemigo
             timer = 0;
             DefinirObjetivo();
         }
-    }
-
-    public void TerminaOrden()
-    {
-        //activarZombie.Invoke();
-        DefinirObjetivo();
     }
 }

@@ -8,7 +8,7 @@ public class ZombieTacon : Enemigo
     private void Start()
     {
         vida = 100;
-        dañar = 5;
+        _dañar = 5;
         daño = 20;
         DefinirObjetivo();
     }
