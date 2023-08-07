@@ -13,8 +13,9 @@ public class ZombieTacon : Enemigo
         DefinirObjetivo();
     }
 
-    //public void Iniciar()
-    //{
-    //    DefinirObjetivo();
-    //}
+    public override void OnDestroy()
+    {
+        base.OnDestroy();
+        adminJuego.zombiePequeñoDerrotados++;
+    }
 }

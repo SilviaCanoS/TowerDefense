@@ -7,12 +7,16 @@ using UnityEngine.Events;
 public class Enemigo : MonoBehaviour, IAtacable, IAtacante
 {
     public GameObject objetivo;
-    public int vida = 200, _dañar = 0, daño = 0;
+    public int vida = 200, _dañar = 0, daño = 0, recursosGanados = 200;
     public Animator animator;
+    public AdminJuego adminJuego;
+    public EnemySpawner enemySpawner;
 
     private void OnEnable()
     {
         objetivo = GameObject.Find("Casa");
+        adminJuego = GameObject.Find("AdminJuego").GetComponent<AdminJuego>();
+        enemySpawner = GameObject.Find("EnemySpawner").GetComponent<EnemySpawner>();
         objetivo.GetComponent<Objetivo>().EnObjetivoDestruido += Detener;
     }
 
@@ -38,6 +42,12 @@ public class Enemigo : MonoBehaviour, IAtacable, IAtacante
             animator.SetBool("isMoving", false);
             animator.SetTrigger("onObjectiveReached");
         }
+    }
+
+    public virtual void OnDestroy()
+    {
+        adminJuego.ModificarRecursos(recursosGanados);
+        enemySpawner.enemigosGenerados.Remove(this.gameObject);
     }
 
     public void DefinirObjetivo()
