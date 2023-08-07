@@ -24,4 +24,10 @@ public class Demonio : Enemigo
             DefinirObjetivo();
         }
     }
+
+    public override void OnDestroy()
+    {
+        base.OnDestroy();
+        adminJuego.zombieGrandeDerrotados++;
+    }
 }
