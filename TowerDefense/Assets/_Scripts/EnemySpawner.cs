@@ -32,7 +32,7 @@ public class EnemySpawner : MonoBehaviour
     {
         laOleadaHaIniciado = true;
         if(EnOleadaIniciada != null) EnOleadaIniciada();
-        Instantiate(prefabZombieGrande);
+        enemigosGenerados.Add(Instantiate(prefabZombieGrande));
         ConfigurarCantidadDeEnemigos();
         InstanciarEnemigo();
     }
@@ -70,6 +70,7 @@ public class EnemySpawner : MonoBehaviour
             TerminarOla();
             return;
         }
-        Invoke("InstanciarEnemigo", 2);
+        //si se cambia el tiempo, tambien cambiar en el script demonio 
+        Invoke("InstanciarEnemigo", 4);
     }
 }

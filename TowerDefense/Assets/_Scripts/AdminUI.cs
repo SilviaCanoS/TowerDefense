@@ -18,6 +18,7 @@ public class AdminUI : MonoBehaviour
         enemySpawner.EnOleadaTerminada += MostrarMensajeUltimoEnemigo;
         enemySpawner.EnOleadaGanada += MostrarCanvasOlaGanada;
         adminJuego.enRecursosModificados += ActualizarRecursos;
+        textoRecursos.text = $"Recursos: {adminJuego.recursos}";
     }
 
     private void OnDisable()
@@ -29,38 +30,38 @@ public class AdminUI : MonoBehaviour
         adminJuego.enRecursosModificados -= ActualizarRecursos;
     }
 
-    private void ActualizarOla()
+    public void ActualizarOla()
     {
         textoOleada.text = $"Ola: {enemySpawner.oleada}";
         OcultarCanvasOlaGanada();
     }
 
-    private void MostrarMensajeUltimoEnemigo()
+    public void MostrarMensajeUltimoEnemigo()
     {
         canvasFinOla.SetActive(true);
         Invoke("OcultarMensajeUltimoEnemigo", 3);
     }
 
-    private void OcultarMensajeUltimoEnemigo()
+    public void OcultarMensajeUltimoEnemigo()
     {
         canvasFinOla.SetActive(false);
         textoEnemigos.text = $"Enemigos: \t {adminJuego.zombiePequeñoDerrotados}";
         textoJefes.text = $"Jefes: \t\t {adminJuego.zombieGrandeDerrotados}";
     }
 
-    private void MostrarCanvasOlaGanada()
+    public void MostrarCanvasOlaGanada()
     {
         textoEnemigos.text = $"Enemigos: \t {adminJuego.zombiePequeñoDerrotados}";
         textoJefes.text = $"Jefes: \t\t {adminJuego.zombieGrandeDerrotados}";
         canvasOlaGanada.SetActive(true);
     }
 
-    private void OcultarCanvasOlaGanada()
+    public void OcultarCanvasOlaGanada()
     {
         canvasOlaGanada.SetActive(false);
     }
 
-    private void ActualizarRecursos()
+    public void ActualizarRecursos()
     {
         textoRecursos.text = $"Recursos: {adminJuego.recursos}";
     }
