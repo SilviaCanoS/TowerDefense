@@ -1139,7 +1139,7 @@ GameObject:
   - component: {fileID: 2792873223973938227}
   m_Layer: 0
   m_Name: "ZombiePeque\xF1o"
-  m_TagString: Untagged
+  m_TagString: Enemigo
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1222,7 +1222,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.5
-  m_Speed: 3
+  m_Speed: 1
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120
@@ -1248,9 +1248,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objetivo: {fileID: 0}
   vida: 100
-  "da\xF1ar": 0
+  "_da\xF1ar": 0
   "da\xF1o": 0
+  recursosGanados: 200
   animator: {fileID: 8622373277320767939}
+  adminJuego: {fileID: 0}
+  enemySpawner: {fileID: 0}
 --- !u!1 &3531450534861939929
 GameObject:
   m_ObjectHideFlags: 0

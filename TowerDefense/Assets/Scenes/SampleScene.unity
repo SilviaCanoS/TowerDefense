@@ -819,6 +819,10 @@ MonoBehaviour:
   - {fileID: 5723132533857291933, guid: f5169706569d2224c98ca878d474873f, type: 3}
   - {fileID: 5341687212104861260, guid: 8bf2e48ec1303fc479a18dc5bc15a8ce, type: 3}
   - {fileID: 2711287587119094551, guid: 9453605cda5f5ee4680a517907390d71, type: 3}
+  torresInstanciadas: []
+  adminJuego: {fileID: 847109635}
+  enemySpawner: {fileID: 368585558}
+  objetivo: {fileID: 633538449}
 --- !u!4 &90319182
 Transform:
   m_ObjectHideFlags: 0
@@ -1959,7 +1963,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh25104
+  m_Name: pb_Mesh25170
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -4877,7 +4881,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   "zombiePeque\xF1oDerrotados": 0
   zombieGrandeDerrotados: 0
-  recursos: 0
+  recursos: 800
 --- !u!4 &847109636
 Transform:
   m_ObjectHideFlags: 0
@@ -4899,7 +4903,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh24898
+  m_Name: pb_Mesh25002
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -9513,7 +9517,43 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2133935743}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 368585558}
+        m_TargetAssemblyTypeName: EnemySpawner, Assembly-CSharp
+        m_MethodName: EmpezarOla
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1770470409}
+        m_TargetAssemblyTypeName: AdminUI, Assembly-CSharp
+        m_MethodName: OcultarCanvasOlaGanada
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 847109635}
+        m_TargetAssemblyTypeName: AdminJuego, Assembly-CSharp
+        m_MethodName: ResetValores
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &2133935743
 MonoBehaviour:
   m_ObjectHideFlags: 0

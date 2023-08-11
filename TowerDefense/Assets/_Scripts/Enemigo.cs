@@ -29,6 +29,7 @@ public class Enemigo : MonoBehaviour, IAtacable, IAtacante
     {
         if (vida <= 0)
         {
+            enemySpawner.enemigosGenerados.Remove(this.gameObject);
             animator.SetTrigger("onDead");
             GetComponent<NavMeshAgent>().SetDestination(transform.position);
             Destroy(this.gameObject, 3);

@@ -79,7 +79,7 @@ GameObject:
   - component: {fileID: 3074111597933406070}
   m_Layer: 0
   m_Name: ZombieGrande
-  m_TagString: Untagged
+  m_TagString: Enemigo
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -162,7 +162,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.5
-  m_Speed: 2
+  m_Speed: 0.5
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120
@@ -188,9 +188,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objetivo: {fileID: 0}
   vida: 200
-  "da\xF1ar": 0
+  "_da\xF1ar": 0
   "da\xF1o": 0
+  recursosGanados: 200
   animator: {fileID: 3074111597933406066}
+  adminJuego: {fileID: 0}
   enemySpawner: {fileID: 0}
 --- !u!1 &3074111598005151535
 GameObject:

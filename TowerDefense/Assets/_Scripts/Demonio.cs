@@ -6,7 +6,7 @@ using UnityEngine.Events;
 
 public class Demonio : Enemigo
 {
-    float timer = 0, timerEfecto = 40;
+    float timer = 0, timerEfecto = 80;
 
     private void Start()
     {
@@ -22,6 +22,14 @@ public class Demonio : Enemigo
         {
             timer = 0;
             DefinirObjetivo();
+        }
+
+        if (vida <= 0)
+        {
+            enemySpawner.enemigosGenerados.Remove(this.gameObject);
+            animator.SetTrigger("onDead");
+            GetComponent<NavMeshAgent>().SetDestination(transform.position);
+            Destroy(this.gameObject, 3);
         }
     }
 
