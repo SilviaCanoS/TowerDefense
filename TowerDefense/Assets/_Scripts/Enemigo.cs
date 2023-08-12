@@ -14,7 +14,7 @@ public class Enemigo : MonoBehaviour, IAtacable, IAtacante
 
     private void OnEnable()
     {
-        objetivo = GameObject.Find("Casa");
+        objetivo = GameObject.Find("Baker_house");
         adminJuego = GameObject.Find("AdminJuego").GetComponent<AdminJuego>();
         enemySpawner = GameObject.Find("EnemySpawner").GetComponent<EnemySpawner>();
         objetivo.GetComponent<Objetivo>().EnObjetivoDestruido += Detener;
