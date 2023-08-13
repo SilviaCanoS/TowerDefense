@@ -7,7 +7,7 @@ using UnityEngine.Events;
 public class Enemigo : MonoBehaviour, IAtacable, IAtacante
 {
     public GameObject objetivo;
-    public int vida = 200, _dañar = 0, daño = 0, recursosGanados = 200;
+    public int vida = 200, _dañar = 0, daño = 0, recursosGanados = 50;
     public Animator animator;
     public AdminJuego adminJuego;
     public EnemySpawner enemySpawner;

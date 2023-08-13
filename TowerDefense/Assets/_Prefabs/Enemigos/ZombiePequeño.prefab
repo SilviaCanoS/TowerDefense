@@ -1250,7 +1250,7 @@ MonoBehaviour:
   vida: 100
   "_da\xF1ar": 0
   "da\xF1o": 0
-  recursosGanados: 200
+  recursosGanados: 50
   animator: {fileID: 8622373277320767939}
   adminJuego: {fileID: 0}
   enemySpawner: {fileID: 0}
