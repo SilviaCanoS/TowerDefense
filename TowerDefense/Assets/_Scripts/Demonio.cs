@@ -6,13 +6,14 @@ using UnityEngine.Events;
 
 public class Demonio : Enemigo
 {
-    float timer = 0, timerEfecto = 80;
+    float timer = 0, timerEfecto;
 
     private void Start()
     {
         vida = 200;
         _dañar = 40;
         daño = 10;
+        timerEfecto = enemySpawner.tiempoDeGeneracion * enemySpawner.enemigosDuranteEstaOleada;
     }
     
     private void Update()

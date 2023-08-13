@@ -7,9 +7,9 @@ public class EnemySpawner : MonoBehaviour
 {
     //public List<GameObject> prefabEnemigos;
     public GameObject prefabZombiePequeño, prefabZombieGrande;
-    public int oleada;
+    public int oleada, tiempoDeGeneracion = 6;
     public List<int> enemigosPorOleada;
-    private int enemigosDuranteEstaOleada;
+    public int enemigosDuranteEstaOleada;
 
     public delegate void EstadoOleada();
     public event EstadoOleada EnOleadaIniciada, EnOleadaTerminada, EnOleadaGanada;
@@ -25,7 +25,8 @@ public class EnemySpawner : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (laOleadaHaIniciado && enemigosGenerados.Count == 0) GanarOla();
+        //if (laOleadaHaIniciado && enemigosGenerados.Count == 0) GanarOla();
+        if (laOleadaHaIniciado && enemigosDuranteEstaOleada < 0) GanarOla();
     }
 
     public void EmpezarOla()
@@ -66,11 +67,14 @@ public class EnemySpawner : MonoBehaviour
         if(enemigosDuranteEstaOleada < 0)
         {
             oleada++;
+            tiempoDeGeneracion--;
+            if (tiempoDeGeneracion < 1) tiempoDeGeneracion = 1;
             ConfigurarCantidadDeEnemigos();
             TerminarOla();
             return;
         }
+
         //si se cambia el tiempo, tambien cambiar en el script demonio 
-        Invoke("InstanciarEnemigo", 4);
+        Invoke("InstanciarEnemigo", tiempoDeGeneracion);
     }
 }

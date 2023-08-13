@@ -7,11 +7,12 @@ public class Bala : MonoBehaviour, IAtacante
     public Vector3 destino;
     public float velocidad = 40;
     public GameObject enemigo;
-    public int daño = 50;
+    public int daño;
 
     private void Start()
     {
         destino.y += 1;
+
     }
 
     private void Update()

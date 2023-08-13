@@ -45,14 +45,12 @@ public class AdminUI : MonoBehaviour
     public void OcultarMensajeUltimoEnemigo()
     {
         canvasFinOla.SetActive(false);
-        textoEnemigos.text = $"Enemigos: \t {adminJuego.zombiePequeñoDerrotados}";
-        textoJefes.text = $"Jefes: \t\t {adminJuego.zombieGrandeDerrotados}";
     }
 
     public void MostrarCanvasOlaGanada()
     {
-        textoEnemigos.text = $"Enemigos: \t {adminJuego.zombiePequeñoDerrotados}";
-        textoJefes.text = $"Jefes: \t\t {adminJuego.zombieGrandeDerrotados}";
+        textoEnemigos.text = $"Enemigos: {adminJuego.zombiePequeñoDerrotados}";
+        textoJefes.text = $"Jefes: {adminJuego.zombieGrandeDerrotados}";
         canvasOlaGanada.SetActive(true);
     }
 
