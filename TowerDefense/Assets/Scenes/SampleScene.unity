@@ -822,7 +822,7 @@ MonoBehaviour:
   torresInstanciadas: []
   adminJuego: {fileID: 847109635}
   enemySpawner: {fileID: 368585558}
-  objetivo: {fileID: 0}
+  objetivo: {fileID: 756772437}
 --- !u!4 &90319182
 Transform:
   m_ObjectHideFlags: 0
@@ -2036,7 +2036,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh25182
+  m_Name: pb_Mesh93394
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -2920,7 +2920,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 13168f4e39eadef4890ee22a1ebb5f43, type: 2}
+  - {fileID: 2100000, guid: 5d8af8f434f69794eabd684fb44b4fbf, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -4882,7 +4882,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh25014
+  m_Name: pb_Mesh97352
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -7977,7 +7977,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: c19faf83ea6fe694fb7080ccb4a34b01, type: 2}
+  - {fileID: 2100000, guid: db96e04f47f6c2a44bc6bb90f93602ec, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -8543,7 +8543,7 @@ MonoBehaviour:
   canvasOlaGanada: {fileID: 267308733}
   canvasFinOla: {fileID: 791549992}
   enemySpawner: {fileID: 368585558}
-  objetivo: {fileID: 0}
+  objetivo: {fileID: 756772438}
   adminJuego: {fileID: 847109635}
   textoRecursos: {fileID: 1036485173}
   textoOleada: {fileID: 1974246480}
