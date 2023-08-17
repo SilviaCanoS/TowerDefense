@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class TorreCactus : TorreBase, IAtacante
 {
+    float timer = 0, timerEfecto = 20;
     public float divisionesRayo = 10;
     public LineRenderer LRRayo;
     public List<Vector3> puntos;
@@ -12,6 +13,18 @@ public class TorreCactus : TorreBase, IAtacante
     private void Start()
     {
         LRRayo = GetComponent<LineRenderer>();
+    }
+
+    private void Update()
+    {
+        if (enemigo != null) Apuntar();
+
+        timer += Time.deltaTime;
+        if (timer >= timerEfecto)
+        {
+            aminTorres.torresInstanciadas.Remove(this.gameObject);
+            Destroy(this.gameObject);
+        }
     }
 
     private void FixedUpdate()

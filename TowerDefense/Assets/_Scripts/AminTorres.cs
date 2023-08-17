@@ -59,7 +59,7 @@ public class AminTorres : MonoBehaviour
             }
         }
 
-        Invoke(nameof(ActualizarObjetivo), 2);
+        Invoke(nameof(ActualizarObjetivo), 1.5f);
     }
 
     public void CrearTorre(GameObject maceta)

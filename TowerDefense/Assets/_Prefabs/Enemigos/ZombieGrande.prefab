@@ -76,7 +76,7 @@ GameObject:
   - component: {fileID: 3074111597933406069}
   - component: {fileID: 3074111597933406068}
   - component: {fileID: 3074111597933406071}
-  - component: {fileID: 3074111597933406070}
+  - component: {fileID: -6154655441721526800}
   m_Layer: 0
   m_Name: ZombieGrande
   m_TagString: Enemigo
@@ -174,7 +174,7 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
---- !u!114 &3074111597933406070
+--- !u!114 &-6154655441721526800
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -187,10 +187,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objetivo: {fileID: 0}
-  vida: 200
+  vida: 0
   "_da\xF1ar": 0
   "da\xF1o": 0
-  recursosGanados: 50
+  recursosGanados: 0
   animator: {fileID: 3074111597933406066}
   adminJuego: {fileID: 0}
   enemySpawner: {fileID: 0}

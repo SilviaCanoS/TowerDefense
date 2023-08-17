@@ -14,8 +14,9 @@ public class EnemySpawner : MonoBehaviour
     public delegate void EstadoOleada();
     public event EstadoOleada EnOleadaIniciada, EnOleadaTerminada, EnOleadaGanada;
     
-    public bool laOleadaHaIniciado;
+    public bool laOleadaHaIniciado, terminoOleada;
     public List<GameObject> enemigosGenerados;
+    public AdminUI adminUI;
 
     // Start is called before the first frame update
     void Start()
@@ -25,8 +26,11 @@ public class EnemySpawner : MonoBehaviour
 
     private void FixedUpdate()
     {
-        //if (laOleadaHaIniciado && enemigosGenerados.Count == 0) GanarOla();
-        if (laOleadaHaIniciado && enemigosDuranteEstaOleada < 0) GanarOla();
+        if (laOleadaHaIniciado && enemigosGenerados.Count == 0 && terminoOleada)
+        {
+            GanarOla();
+            terminoOleada = false;
+        }
     }
 
     public void EmpezarOla()
@@ -66,9 +70,13 @@ public class EnemySpawner : MonoBehaviour
         enemigosDuranteEstaOleada--;
         if(enemigosDuranteEstaOleada < 0)
         {
+            terminoOleada = true;
+
             oleada++;
+
             tiempoDeGeneracion--;
             if (tiempoDeGeneracion < 1) tiempoDeGeneracion = 1;
+
             ConfigurarCantidadDeEnemigos();
             TerminarOla();
             return;

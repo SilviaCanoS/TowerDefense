@@ -21200,7 +21200,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 826299800505582639}
-  - component: {fileID: 3281323713702640009}
+  - component: {fileID: 4155319100255418324}
   m_Layer: 0
   m_Name: DoblePeaShooter
   m_TagString: Untagged
@@ -21224,7 +21224,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &3281323713702640009
+--- !u!114 &4155319100255418324
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -21239,9 +21239,12 @@ MonoBehaviour:
   enemigo: {fileID: 0}
   prefabBala: {fileID: 7068613026302590941, guid: 325fd09e79f907a4abe6ca20e1610fb6, type: 3}
   baseGirar: {fileID: 6343390884282906894}
+  vida: 0
   "puntasCa\xF1on":
   - {fileID: 2077386777238222011}
   - {fileID: 4493413745753443887}
+  aminTorres: {fileID: 0}
+  enemySpawner: {fileID: 0}
 --- !u!1 &5383075274719395508
 GameObject:
   m_ObjectHideFlags: 0
