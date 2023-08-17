@@ -5,9 +5,25 @@ using UnityEngine;
 public class Bala : MonoBehaviour, IAtacante
 {
     public Vector3 destino;
-    public float velocidad = 40;
+    public float velocidad;
     public GameObject enemigo;
     public int daño;
+    public EnemySpawner enemySpawner;
+
+    private void OnEnable()
+    {
+        enemySpawner = GameObject.Find("EnemySpawner").GetComponent<EnemySpawner>();
+        switch (enemySpawner.oleada) 
+        {
+            case 0: daño = 25; velocidad = 80;  break;
+            case 1: daño = 40; velocidad = 85; break;
+            case 2: daño = 60; velocidad = 90; break;
+            case 3: daño = 75; velocidad = 95; break;
+            case 4: daño = 95; velocidad = 100; break;
+            default: daño = 110; velocidad = 105; break;
+
+        }
+    }
 
     private void Start()
     {

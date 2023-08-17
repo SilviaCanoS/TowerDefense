@@ -10,7 +10,7 @@ public class Demonio : Enemigo
 
     private void Start()
     {
-        vida = 200;
+        vida *= 2;
         _dañar = 40;
         daño = 10;
         timerEfecto = enemySpawner.tiempoDeGeneracion * enemySpawner.enemigosDuranteEstaOleada;

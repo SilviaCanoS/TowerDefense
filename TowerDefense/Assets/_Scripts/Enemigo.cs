@@ -7,7 +7,7 @@ using UnityEngine.Events;
 public class Enemigo : MonoBehaviour, IAtacable, IAtacante
 {
     public GameObject objetivo;
-    public int vida = 200, _dañar = 0, daño = 0, recursosGanados = 50;
+    public int vida, _dañar = 0, daño = 0, recursosGanados;
     public Animator animator;
     public AdminJuego adminJuego;
     public EnemySpawner enemySpawner;
@@ -18,11 +18,23 @@ public class Enemigo : MonoBehaviour, IAtacable, IAtacante
         adminJuego = GameObject.Find("AdminJuego").GetComponent<AdminJuego>();
         enemySpawner = GameObject.Find("EnemySpawner").GetComponent<EnemySpawner>();
         objetivo.GetComponent<Objetivo>().EnObjetivoDestruido += Detener;
+
+        switch (enemySpawner.oleada)
+        {
+            case 0: vida = 100; break;
+            case 1: vida = 120; break;
+            case 2: vida = 140; break;
+            case 3: vida = 160; break;
+            case 4: vida = 180; break;
+            default: vida = 200; break;
+        }
+        recursosGanados = vida;
     }
 
     private void OnDisable()
     {
-        objetivo.GetComponent<Objetivo>().EnObjetivoDestruido -= Detener;
+        if(objetivo != null)
+            objetivo.GetComponent<Objetivo>().EnObjetivoDestruido -= Detener;
     }
 
     private void Update()

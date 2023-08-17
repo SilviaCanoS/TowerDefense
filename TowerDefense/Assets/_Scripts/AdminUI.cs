@@ -2,10 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class AdminUI : MonoBehaviour
 {
-    public GameObject canvasJuego, canvasGameOver, canvasOlaGanada, canvasFinOla;
+    public GameObject canvasJuego, canvasGameOver, canvasOlaGanada, canvasFinOla, buttonComenzar, canvasPausa;
     public EnemySpawner enemySpawner;
     public Objetivo objetivo;
     public AdminJuego adminJuego;
@@ -30,10 +31,37 @@ public class AdminUI : MonoBehaviour
         adminJuego.enRecursosModificados -= ActualizarRecursos;
     }
 
+    private void Update()
+    {
+        if(enemySpawner.laOleadaHaIniciado)
+            buttonComenzar.GetComponent<Button>().interactable = false;
+        if (!enemySpawner.laOleadaHaIniciado)
+            buttonComenzar.GetComponent<Button>().interactable = true;
+    }
+
     public void ActualizarOla()
     {
-        textoOleada.text = $"Ola: {enemySpawner.oleada}";
+        textoOleada.text = $"Ola: {enemySpawner.oleada + 1}";
         OcultarCanvasOlaGanada();
+    }
+
+    public void MostrarPausa()
+    {
+        Time.timeScale = 0;
+        canvasJuego.SetActive(false);
+        canvasPausa.SetActive(true);
+    }
+
+    public void OcultarPausa()
+    {
+        Time.timeScale = 1;
+        canvasJuego.SetActive(true);
+        canvasPausa.SetActive(false);
+    }
+
+    public void Salir()
+    {
+        Application.Quit();
     }
 
     public void MostrarMensajeUltimoEnemigo()
@@ -49,7 +77,7 @@ public class AdminUI : MonoBehaviour
 
     public void MostrarCanvasOlaGanada()
     {
-        textoEnemigos.text = $"Enemigos: {adminJuego.zombiePequeñoDerrotados}";
+        textoEnemigos.text = $"Enemigos: {adminJuego.zombiePequeñoDerrotados + 1}";
         textoJefes.text = $"Jefes: {adminJuego.zombieGrandeDerrotados}";
         canvasOlaGanada.SetActive(true);
     }
@@ -99,6 +127,7 @@ public class AdminUI : MonoBehaviour
 
     public void ReiniciarNivel()
     {
+        Time.timeScale = 1;
         int escenaActual = SceneManager.GetActiveScene().buildIndex;
         SceneManager.LoadScene(escenaActual);
     }
