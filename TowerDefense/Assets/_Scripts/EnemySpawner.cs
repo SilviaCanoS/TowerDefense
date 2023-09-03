@@ -8,7 +8,7 @@ public class EnemySpawner : MonoBehaviour
     //public List<GameObject> prefabEnemigos;
     public GameObject prefabZombiePequeño, prefabZombieGrande;
     public int oleada, tiempoDeGeneracion = 6;
-    public List<int> enemigosPorOleada;
+    //public List<int> enemigosPorOleada;
     public int enemigosDuranteEstaOleada;
 
     public delegate void EstadoOleada();
@@ -58,7 +58,7 @@ public class EnemySpawner : MonoBehaviour
 
     public void ConfigurarCantidadDeEnemigos()
     {
-        enemigosDuranteEstaOleada = enemigosPorOleada[oleada];
+        enemigosDuranteEstaOleada = Random.Range(5, 30); //enemigosPorOleada[oleada];
     }
 
     public void InstanciarEnemigo()

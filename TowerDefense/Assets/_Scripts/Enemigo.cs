@@ -43,17 +43,20 @@ public class Enemigo : MonoBehaviour, IAtacable, IAtacante
         {
             enemySpawner.enemigosGenerados.Remove(this.gameObject);
             animator.SetTrigger("onDead");
-            GetComponent<NavMeshAgent>().SetDestination(transform.position);
+            //GetComponent<NavMeshAgent>().SetDestination(transform.position);
             Destroy(this.gameObject, 3);
         }
     }
 
-    private void OnTriggerEnter(Collider other)
+    private void OnCollisionEnter(Collision collision)
     {
-        if (other.gameObject.CompareTag("Objetivo"))
+        if (collision.gameObject.CompareTag("Objetivo"))
         {
             animator.SetBool("isMoving", false);
             animator.SetTrigger("onObjectiveReached");
+
+            //juntarse
+            GetComponent<NavMeshAgent>().enabled = false;
         }
     }
 
@@ -85,6 +88,6 @@ public class Enemigo : MonoBehaviour, IAtacable, IAtacante
     public void Detener()
     {
         animator.SetTrigger("onObjectiveDestroyed");
-        GetComponent<NavMeshAgent>().SetDestination(transform.position);
+        //GetComponent<NavMeshAgent>().SetDestination(transform.position);
     }
 }
