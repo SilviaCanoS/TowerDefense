@@ -38,25 +38,25 @@ public class Bala : MonoBehaviour, IAtacante
         if (Vector3.Distance(transform.position, destino) < 0.01f) Destroy(gameObject);
     }
 
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.gameObject.CompareTag("Enemigo"))
-        {
-            enemigo = other.gameObject;
-            Dañar(daño);
-            Destroy(gameObject);
-        }
-    }
-
-    //private void OnCollisionEnter(Collision collision)
+    //private void OnTriggerEnter(Collider other)
     //{
-    //    if(collision.gameObject.CompareTag("Enemigo"))
+    //    if (other.gameObject.CompareTag("Enemigo"))
     //    {
-    //        enemigo = collision.gameObject;
+    //        enemigo = other.gameObject;
     //        Dañar(daño);
     //        Destroy(gameObject);
     //    }
     //}
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("Enemigo"))
+        {
+            enemigo = collision.gameObject;
+            Dañar(daño);
+            Destroy(gameObject);
+        }
+    }
 
     public void Dañar(int daño)
     {

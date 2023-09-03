@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class TorreCactus : TorreBase, IAtacante
 {
-    float timer = 0, timerEfecto = 20;
+    float timer = 0, timerEfecto = 30;
     public float divisionesRayo = 10;
     public LineRenderer LRRayo;
     public List<Vector3> puntos;
