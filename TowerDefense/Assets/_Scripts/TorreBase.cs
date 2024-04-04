@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Video;
 
+/**Esta clase controla las torres peaShooter y DoublePeaShooter \n
+ * y sirve de base para la torre Cactus
+ */
 public class TorreBase : MonoBehaviour
 {
     public GameObject enemigo, prefabBala, baseGirar;
@@ -11,6 +14,10 @@ public class TorreBase : MonoBehaviour
     public AminTorres aminTorres;
     public EnemySpawner enemySpawner;
 
+
+    /**Al activarse se inicializan el administrador de torres y el generador de enemigos \n
+     * Tambien se asigna la vida de la torre dependiendo del número de oleada
+     */
     private void OnEnable()
     {
         aminTorres = GameObject.Find("AdminTorres").GetComponent<AminTorres>();
@@ -27,6 +34,10 @@ public class TorreBase : MonoBehaviour
         }
     }
 
+    /**Detecta si hay algun enemigo en el escenario para apuntarle con el metodo Apuntar \n
+     * Si la vida de la torre es 0, la elimina de la lista de torres instanciadas \n
+     * y la destruye
+     */
     private void Update()
     {
         if (enemigo != null) Apuntar();
@@ -38,12 +49,19 @@ public class TorreBase : MonoBehaviour
         }
     }
 
+    /**Este metodo gira la torre para apuntar directamente al enemigo mas cercano
+    */
     public void Apuntar()
     {
         baseGirar.GetComponent<Transform>().LookAt(enemigo.transform); 
         //transform.LookAt(enemigo.transform); //gira el eje z
     }
 
+    /**Este metodo permite que la torre dispare \n
+     * Busca todas las salidas del cañon disponible e instancia una bala \n
+     * Define el objetivo de la bala como el enemigo mas cercano \n
+     * Resta una vida a la torre por cada bala disparada
+     */
     public virtual void Disparar() //para que se pueda hacer un override
     {
         foreach(GameObject punta in puntasCañon)

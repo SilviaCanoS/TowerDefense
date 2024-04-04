@@ -1,0 +1,191 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.10.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Tower Defense: Archivo de cÃ³digo fuente TorreBase.cs</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<script type="text/javascript" src="../../clipboard.js"></script>
+<link href="../../navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../resize.js"></script>
+<script type="text/javascript" src="../../navtreedata.js"></script>
+<script type="text/javascript" src="../../navtree.js"></script>
+<script type="text/javascript" src="../../cookie.js"></script>
+<link href="../../search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../search/searchdata.js"></script>
+<script type="text/javascript" src="../../search/search.js"></script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Tower Defense<span id="projectnumber">&#160;1.0</span>
+   </div>
+   <div id="projectbrief">Mi primer prototipo de Tower Defense</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.10.0 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "../../search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="../../menudata.js"></script>
+<script type="text/javascript" src="../../menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('../../',true,false,'search.php','Buscar');
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(1); });
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('d6/d2f/_torre_base_8cs_source.html','../../'); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Cargando...</div>
+<div class="SRStatus" id="Searching">Buscando...</div>
+<div class="SRStatus" id="NoMatches">Nada coincide</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">TorreBase.cs</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="../../d6/d2f/_torre_base_8cs.html">Ir a la documentaciÃ³n de este archivo.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="keyword">using </span>System.Collections;</div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="keyword">using </span>System.Collections.Generic;</div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="keyword">using </span>UnityEngine;</div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="keyword">using </span>UnityEngine.Video;</div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span> </div>
+<div class="foldopen" id="foldopen00009" data-start="{" data-end="};">
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno"><a class="line" href="../../d1/d7b/class_torre_base.html">    9</a></span><span class="keyword">public</span> <span class="keyword">class </span><a class="code hl_class" href="../../d1/d7b/class_torre_base.html">TorreBase</a> : MonoBehaviour</div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>{</div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno"><a class="line" href="../../d1/d7b/class_torre_base.html#a2416c947725a4047390d4ca93180f8bc">   11</a></span>    <span class="keyword">public</span> GameObject <a class="code hl_variable" href="../../d1/d7b/class_torre_base.html#ab84459e27931515fb0c5c74081479e06">enemigo</a>, <a class="code hl_variable" href="../../d1/d7b/class_torre_base.html#a4118fd87bc0bb9e927e582546121cac4">prefabBala</a>, <a class="code hl_variable" href="../../d1/d7b/class_torre_base.html#a2416c947725a4047390d4ca93180f8bc">baseGirar</a>;</div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno"><a class="line" href="../../d1/d7b/class_torre_base.html#a9fcdda1654d5d7f12e34e03016473f4d">   12</a></span>    <span class="keyword">public</span> <span class="keywordtype">int</span> <a class="code hl_variable" href="../../d1/d7b/class_torre_base.html#a9fcdda1654d5d7f12e34e03016473f4d">vida</a>;</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno"><a class="line" href="../../d1/d7b/class_torre_base.html#a2e41cdec5c2e7c7d50a2ffb27e073cba">   13</a></span>    <span class="keyword">public</span> List&lt;GameObject&gt; <a class="code hl_variable" href="../../d1/d7b/class_torre_base.html#a2e41cdec5c2e7c7d50a2ffb27e073cba">puntasCañon</a>;</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno"><a class="line" href="../../d1/d7b/class_torre_base.html#a501d8228f9526f2bcbc66ff4023fbe71">   14</a></span>    <span class="keyword">public</span> <a class="code hl_class" href="../../d0/d26/class_amin_torres.html">AminTorres</a> <a class="code hl_variable" href="../../d1/d7b/class_torre_base.html#a501d8228f9526f2bcbc66ff4023fbe71">aminTorres</a>;</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno"><a class="line" href="../../d1/d7b/class_torre_base.html#a776d5d5c351b981668b5cd523d1e3ea8">   15</a></span>    <span class="keyword">public</span> <a class="code hl_class" href="../../de/db1/class_enemy_spawner.html">EnemySpawner</a> <a class="code hl_variable" href="../../d1/d7b/class_torre_base.html#a776d5d5c351b981668b5cd523d1e3ea8">enemySpawner</a>;</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span> </div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span> </div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>    <span class="keyword">private</span> <span class="keywordtype">void</span> OnEnable()</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>    {</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>        <a class="code hl_variable" href="../../d1/d7b/class_torre_base.html#a501d8228f9526f2bcbc66ff4023fbe71">aminTorres</a> = GameObject.Find(<span class="stringliteral">&quot;AdminTorres&quot;</span>).GetComponent&lt;<a class="code hl_class" href="../../d0/d26/class_amin_torres.html">AminTorres</a>&gt;();</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>        <a class="code hl_variable" href="../../d1/d7b/class_torre_base.html#a776d5d5c351b981668b5cd523d1e3ea8">enemySpawner</a> = GameObject.Find(<span class="stringliteral">&quot;EnemySpawner&quot;</span>).GetComponent&lt;<a class="code hl_class" href="../../de/db1/class_enemy_spawner.html">EnemySpawner</a>&gt;();</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span> </div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>        <span class="keywordflow">switch</span>(<a class="code hl_variable" href="../../d1/d7b/class_torre_base.html#a776d5d5c351b981668b5cd523d1e3ea8">enemySpawner</a>.<a class="code hl_variable" href="../../de/db1/class_enemy_spawner.html#a649eefc76d3826510ba5f6bebb6c1bcc">oleada</a>)</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>        {</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>            <span class="keywordflow">case</span> 0: <a class="code hl_variable" href="../../d1/d7b/class_torre_base.html#a9fcdda1654d5d7f12e34e03016473f4d">vida</a> = 20; <span class="keywordflow">break</span>;</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>            <span class="keywordflow">case</span> 1: <a class="code hl_variable" href="../../d1/d7b/class_torre_base.html#a9fcdda1654d5d7f12e34e03016473f4d">vida</a> = 18; <span class="keywordflow">break</span>;</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>            <span class="keywordflow">case</span> 2: <a class="code hl_variable" href="../../d1/d7b/class_torre_base.html#a9fcdda1654d5d7f12e34e03016473f4d">vida</a> = 16; <span class="keywordflow">break</span>;</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>            <span class="keywordflow">case</span> 3: <a class="code hl_variable" href="../../d1/d7b/class_torre_base.html#a9fcdda1654d5d7f12e34e03016473f4d">vida</a> = 14; <span class="keywordflow">break</span>;</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>            <span class="keywordflow">case</span> 4: <a class="code hl_variable" href="../../d1/d7b/class_torre_base.html#a9fcdda1654d5d7f12e34e03016473f4d">vida</a> = 12; <span class="keywordflow">break</span>;</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>            <span class="keywordflow">default</span>: <a class="code hl_variable" href="../../d1/d7b/class_torre_base.html#a9fcdda1654d5d7f12e34e03016473f4d">vida</a> = 10; <span class="keywordflow">break</span>;</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>        }</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>    }</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span> </div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>    <span class="keyword">private</span> <span class="keywordtype">void</span> Update()</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>    {</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>        <span class="keywordflow">if</span> (<a class="code hl_variable" href="../../d1/d7b/class_torre_base.html#ab84459e27931515fb0c5c74081479e06">enemigo</a> != <span class="keyword">null</span>) <a class="code hl_function" href="../../d1/d7b/class_torre_base.html#a5e1a72d8542cfa3bf8da633eca341ad6">Apuntar</a>();</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>        </div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>        <span class="keywordflow">if</span>(<a class="code hl_variable" href="../../d1/d7b/class_torre_base.html#a9fcdda1654d5d7f12e34e03016473f4d">vida</a> &lt;= 0)</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>        {</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>            <a class="code hl_variable" href="../../d1/d7b/class_torre_base.html#a501d8228f9526f2bcbc66ff4023fbe71">aminTorres</a>.<a class="code hl_variable" href="../../d0/d26/class_amin_torres.html#a0d0b359beff6e15486670fe0d84f10e0">torresInstanciadas</a>.Remove(this.gameObject);</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>            Destroy(this.gameObject);</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>        }</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>    }</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span> </div>
+<div class="foldopen" id="foldopen00054" data-start="{" data-end="}">
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno"><a class="line" href="../../d1/d7b/class_torre_base.html#a5e1a72d8542cfa3bf8da633eca341ad6">   54</a></span>    <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code hl_function" href="../../d1/d7b/class_torre_base.html#a5e1a72d8542cfa3bf8da633eca341ad6">Apuntar</a>()</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>    {</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>        <a class="code hl_variable" href="../../d1/d7b/class_torre_base.html#a2416c947725a4047390d4ca93180f8bc">baseGirar</a>.GetComponent&lt;Transform&gt;().LookAt(<a class="code hl_variable" href="../../d1/d7b/class_torre_base.html#ab84459e27931515fb0c5c74081479e06">enemigo</a>.transform); </div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>        <span class="comment">//transform.LookAt(enemigo.transform); //gira el eje z</span></div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>    }</div>
+</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span> </div>
+<div class="foldopen" id="foldopen00065" data-start="{" data-end="}">
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno"><a class="line" href="../../d1/d7b/class_torre_base.html#aca7c5d6fcf0eb37fe4e16048c6703782">   65</a></span>    <span class="keyword">public</span> <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code hl_function" href="../../d1/d7b/class_torre_base.html#aca7c5d6fcf0eb37fe4e16048c6703782">Disparar</a>() <span class="comment">//para que se pueda hacer un override</span></div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>    {</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>        <span class="keywordflow">foreach</span>(GameObject punta <span class="keywordflow">in</span> <a class="code hl_variable" href="../../d1/d7b/class_torre_base.html#a2e41cdec5c2e7c7d50a2ffb27e073cba">puntasCañon</a>)</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>        {</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>            var tempBala = Instantiate&lt;GameObject&gt;(<a class="code hl_variable" href="../../d1/d7b/class_torre_base.html#a4118fd87bc0bb9e927e582546121cac4">prefabBala</a>, punta.transform.position, Quaternion.identity);</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>            tempBala.GetComponent&lt;<a class="code hl_class" href="../../d1/d76/class_bala.html">Bala</a>&gt;().destino = <a class="code hl_variable" href="../../d1/d7b/class_torre_base.html#ab84459e27931515fb0c5c74081479e06">enemigo</a>.transform.position;</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>        }</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>        <a class="code hl_variable" href="../../d1/d7b/class_torre_base.html#a9fcdda1654d5d7f12e34e03016473f4d">vida</a>--;</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>    }</div>
+</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>}</div>
+</div>
+<div class="ttc" id="aclass_amin_torres_html"><div class="ttname"><a href="../../d0/d26/class_amin_torres.html">AminTorres</a></div><div class="ttdef"><b>Definition</b> <a href="../../d3/ddc/_amin_torres_8cs_source.html#l00006">AminTorres.cs:7</a></div></div>
+<div class="ttc" id="aclass_amin_torres_html_a0d0b359beff6e15486670fe0d84f10e0"><div class="ttname"><a href="../../d0/d26/class_amin_torres.html#a0d0b359beff6e15486670fe0d84f10e0">AminTorres.torresInstanciadas</a></div><div class="ttdeci">List&lt; GameObject &gt; torresInstanciadas</div><div class="ttdef"><b>Definition</b> <a href="../../d3/ddc/_amin_torres_8cs_source.html#l00011">AminTorres.cs:11</a></div></div>
+<div class="ttc" id="aclass_bala_html"><div class="ttname"><a href="../../d1/d76/class_bala.html">Bala</a></div><div class="ttdef"><b>Definition</b> <a href="../../d5/dbf/_bala_8cs_source.html#l00005">Bala.cs:6</a></div></div>
+<div class="ttc" id="aclass_enemy_spawner_html"><div class="ttname"><a href="../../de/db1/class_enemy_spawner.html">EnemySpawner</a></div><div class="ttdef"><b>Definition</b> <a href="../../d5/d5d/_enemy_spawner_8cs_source.html#l00006">EnemySpawner.cs:7</a></div></div>
+<div class="ttc" id="aclass_enemy_spawner_html_a649eefc76d3826510ba5f6bebb6c1bcc"><div class="ttname"><a href="../../de/db1/class_enemy_spawner.html#a649eefc76d3826510ba5f6bebb6c1bcc">EnemySpawner.oleada</a></div><div class="ttdeci">int oleada</div><div class="ttdef"><b>Definition</b> <a href="../../d5/d5d/_enemy_spawner_8cs_source.html#l00010">EnemySpawner.cs:10</a></div></div>
+<div class="ttc" id="aclass_torre_base_html"><div class="ttname"><a href="../../d1/d7b/class_torre_base.html">TorreBase</a></div><div class="ttdoc">Esta clase controla las torres peaShooter y DoublePeaShooter  y sirve de base para la torre Cactus.</div><div class="ttdef"><b>Definition</b> <a href="#l00009">TorreBase.cs:10</a></div></div>
+<div class="ttc" id="aclass_torre_base_html_a2416c947725a4047390d4ca93180f8bc"><div class="ttname"><a href="../../d1/d7b/class_torre_base.html#a2416c947725a4047390d4ca93180f8bc">TorreBase.baseGirar</a></div><div class="ttdeci">GameObject baseGirar</div><div class="ttdef"><b>Definition</b> <a href="#l00011">TorreBase.cs:11</a></div></div>
+<div class="ttc" id="aclass_torre_base_html_a2e41cdec5c2e7c7d50a2ffb27e073cba"><div class="ttname"><a href="../../d1/d7b/class_torre_base.html#a2e41cdec5c2e7c7d50a2ffb27e073cba">TorreBase.puntasCañon</a></div><div class="ttdeci">List&lt; GameObject &gt; puntasCañon</div><div class="ttdef"><b>Definition</b> <a href="#l00013">TorreBase.cs:13</a></div></div>
+<div class="ttc" id="aclass_torre_base_html_a4118fd87bc0bb9e927e582546121cac4"><div class="ttname"><a href="../../d1/d7b/class_torre_base.html#a4118fd87bc0bb9e927e582546121cac4">TorreBase.prefabBala</a></div><div class="ttdeci">GameObject prefabBala</div><div class="ttdef"><b>Definition</b> <a href="#l00011">TorreBase.cs:11</a></div></div>
+<div class="ttc" id="aclass_torre_base_html_a501d8228f9526f2bcbc66ff4023fbe71"><div class="ttname"><a href="../../d1/d7b/class_torre_base.html#a501d8228f9526f2bcbc66ff4023fbe71">TorreBase.aminTorres</a></div><div class="ttdeci">AminTorres aminTorres</div><div class="ttdef"><b>Definition</b> <a href="#l00014">TorreBase.cs:14</a></div></div>
+<div class="ttc" id="aclass_torre_base_html_a5e1a72d8542cfa3bf8da633eca341ad6"><div class="ttname"><a href="../../d1/d7b/class_torre_base.html#a5e1a72d8542cfa3bf8da633eca341ad6">TorreBase.Apuntar</a></div><div class="ttdeci">void Apuntar()</div><div class="ttdoc">Este metodo gira la torre para apuntar directamente al enemigo mas cercano.</div><div class="ttdef"><b>Definition</b> <a href="#l00054">TorreBase.cs:54</a></div></div>
+<div class="ttc" id="aclass_torre_base_html_a776d5d5c351b981668b5cd523d1e3ea8"><div class="ttname"><a href="../../d1/d7b/class_torre_base.html#a776d5d5c351b981668b5cd523d1e3ea8">TorreBase.enemySpawner</a></div><div class="ttdeci">EnemySpawner enemySpawner</div><div class="ttdef"><b>Definition</b> <a href="#l00015">TorreBase.cs:15</a></div></div>
+<div class="ttc" id="aclass_torre_base_html_a9fcdda1654d5d7f12e34e03016473f4d"><div class="ttname"><a href="../../d1/d7b/class_torre_base.html#a9fcdda1654d5d7f12e34e03016473f4d">TorreBase.vida</a></div><div class="ttdeci">int vida</div><div class="ttdef"><b>Definition</b> <a href="#l00012">TorreBase.cs:12</a></div></div>
+<div class="ttc" id="aclass_torre_base_html_ab84459e27931515fb0c5c74081479e06"><div class="ttname"><a href="../../d1/d7b/class_torre_base.html#ab84459e27931515fb0c5c74081479e06">TorreBase.enemigo</a></div><div class="ttdeci">GameObject enemigo</div><div class="ttdef"><b>Definition</b> <a href="#l00011">TorreBase.cs:11</a></div></div>
+<div class="ttc" id="aclass_torre_base_html_aca7c5d6fcf0eb37fe4e16048c6703782"><div class="ttname"><a href="../../d1/d7b/class_torre_base.html#aca7c5d6fcf0eb37fe4e16048c6703782">TorreBase.Disparar</a></div><div class="ttdeci">virtual void Disparar()</div><div class="ttdoc">Este metodo permite que la torre dispare  Busca todas las salidas del cañon disponible e instancia una b...</div><div class="ttdef"><b>Definition</b> <a href="#l00065">TorreBase.cs:65</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="../../d6/d2f/_torre_base_8cs.html">TorreBase.cs</a></li>
+    <li class="footer">Generado por <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.10.0 </li>
+  </ul>
+</div>
+</body>
+</html>
